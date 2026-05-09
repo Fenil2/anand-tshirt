@@ -1,5 +1,3 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-
 const quickLinks = ["New Arrivals", "Best Sellers", "Men", "Women", "Contact"];
 
 export function SiteFooter() {
@@ -48,15 +46,8 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="section-shell reveal-up delay-2 flex flex-col items-center justify-between gap-3 px-2 py-5 text-center text-[13px] text-[color:var(--muted)] sm:gap-4 sm:py-7 sm:flex-row sm:text-left">
+      <div className="section-shell reveal-up delay-2 flex items-center justify-center px-2 py-5 text-center text-[13px] text-[color:var(--muted)] sm:py-7">
         <p>&copy; 2025 SpotDot. All rights reserved.</p>
-        <div className="flex items-center gap-4">
-          {[Twitter, Facebook, Instagram, Youtube].map((Icon, index) => (
-            <a key={index} href="#" aria-label="Social link" className="text-[color:var(--muted)] transition hover:text-[color:var(--brand)]">
-              <Icon className="h-4 w-4" strokeWidth={1.8} />
-            </a>
-          ))}
-        </div>
       </div>
     </footer>
   );
