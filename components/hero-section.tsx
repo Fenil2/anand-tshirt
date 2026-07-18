@@ -1,14 +1,14 @@
 import { CirclePlay, Star } from "lucide-react";
-import { heroChecklist } from "@/lib/data";
+import { brandImages, heroChecklist } from "@/lib/data";
 
 export function HeroSection() {
   return (
     <section className="section-shell grid gap-6 overflow-hidden pb-12 pt-2 sm:gap-8 sm:pb-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-12">
-      <div className="reveal-up delay-1 relative overflow-hidden rounded-[32px] border border-white/60 shadow-[0_30px_80px_rgba(24,24,28,0.16)]">
+      <div className="reveal-clip relative overflow-hidden rounded-[32px] border border-white/60 shadow-[0_30px_80px_rgba(24,24,28,0.16)]">
         <img
-          src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
-          alt="Fashion hero"
-          className="h-full min-h-[260px] w-full object-cover sm:min-h-[420px] lg:min-h-[520px]"
+          src={brandImages.essentialsModel}
+          alt="SpotDot Essentials — mens half sleeve"
+          className="h-full min-h-[260px] w-full object-cover object-center sm:min-h-[420px] lg:min-h-[560px]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/28 via-black/0 to-white/10" />
         <div className="premium-card float-slow absolute bottom-4 left-4 max-w-[calc(100%-32px)] rounded-[20px] border border-white/70 px-3 py-3 shadow-[0_24px_50px_rgba(24,24,28,0.16)] sm:bottom-8 sm:left-8 sm:max-w-none sm:rounded-[24px] sm:px-5 sm:py-4">
@@ -41,7 +41,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <h1 className="reveal-up delay-2 mx-auto max-w-[12ch] text-[32px] font-semibold leading-[1.02] tracking-[-0.07em] text-[color:var(--brand)] sm:max-w-[12ch] sm:text-[48px] lg:mx-0 lg:max-w-[13ch] lg:text-[74px]">
+        <h1 className="reveal-blur delay-2 mx-auto max-w-[12ch] text-[32px] font-semibold leading-[1.02] tracking-[-0.07em] text-[color:var(--brand)] sm:max-w-[12ch] sm:text-[48px] lg:mx-0 lg:max-w-[13ch] lg:text-[74px]">
           <span className="block">Shop premium</span>
           <span className="block">t-shirts, essentials,</span>
           <span className="block">and fresh seasonal</span>

@@ -1,29 +1,32 @@
+const WORDMARK = "SPOTDOT";
+
 export default function Loading() {
   return (
-    <div className="loader-screen flex min-h-screen items-center justify-center px-6">
-      <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="loader-ring absolute h-[220px] w-[220px] rounded-full border border-white/40 sm:h-[280px] sm:w-[280px]" />
-        <div className="loader-ring absolute h-[280px] w-[280px] rounded-full border border-black/6 [animation-delay:220ms] sm:h-[360px] sm:w-[360px]" />
+    <div className="pl-root fixed inset-0 z-[200]">
+      <div className="pl-panel pl-panel-top" />
+      <div className="pl-panel pl-panel-bottom" />
 
-        <div className="loader-orb relative flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-white/90 p-3 backdrop-blur-xl sm:h-36 sm:w-36">
-          <img
-            src="/spotdot-logo.jpeg"
-            alt="SpotDot logo"
-            className="h-full w-full rounded-full object-cover"
-          />
+      <div className="pl-content">
+        <p className="pl-eyebrow">Premium Essentials</p>
+
+        <div className="pl-mark" aria-label={WORDMARK}>
+          {WORDMARK.split("").map((letter, index) => (
+            <span
+              key={`${letter}-${index}`}
+              className="pl-letter"
+              style={{ animationDelay: `${index * 70}ms` }}
+            >
+              {letter}
+            </span>
+          ))}
         </div>
 
-        <div className="loader-copy mt-8">
-          <p className="text-[28px] font-semibold uppercase tracking-[0.22em] text-[color:var(--brand)] sm:text-[40px]">
-            SpotDot
-          </p>
-          <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.34em] text-[color:var(--muted-soft)] sm:text-[12px]">
-            Curating premium t-shirt essentials
-          </p>
+        <div className="pl-bar">
+          <div className="pl-bar-fill pl-bar-indeterminate" />
         </div>
 
-        <div className="mt-8 h-[2px] w-40 overflow-hidden rounded-full bg-black/8 sm:w-56">
-          <div className="h-full w-1/2 animate-[cinematicSweep_1.8s_ease-in-out_infinite] rounded-full bg-[color:var(--brand)]" />
+        <div className="pl-meta">
+          <span>Loading the collection</span>
         </div>
       </div>
     </div>

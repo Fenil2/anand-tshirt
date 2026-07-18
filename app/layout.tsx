@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Preloader } from "@/components/preloader";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Preloader />
+        <ScrollReveal />
         {children}
       </body>
     </html>

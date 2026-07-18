@@ -1,15 +1,13 @@
 import { customCards } from "@/lib/data";
-import { MarqueeHeading } from "./marquee-heading";
 
 export function CustomizeSection() {
   return (
     <section className="py-6 sm:py-8 sm:pt-10">
-      <MarqueeHeading text="premium t-shirt sales  *  easy essentials  *  wear every day" />
-      <div className="section-shell mt-6 grid gap-5 sm:mt-8 sm:gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <div className="section-shell grid gap-5 sm:gap-6 lg:grid-cols-[1.2fr_1fr]">
         {customCards.map((card, index) => (
           <article
             key={card.title}
-            className={`premium-card reveal-up cinematic-panel ${card.panel} overflow-hidden rounded-[34px] border border-white/60 ${
+            className={`premium-card ${index === 0 ? "reveal-left" : "reveal-right"} cinematic-panel ${card.panel} overflow-hidden rounded-[34px] border border-white/60 ${
               index === 0 ? "grid min-h-[245px] lg:grid-cols-[0.9fr_1.1fr]" : "grid min-h-[245px] lg:grid-cols-[1fr_0.9fr]"
             }`}
           >
@@ -27,7 +25,11 @@ export function CustomizeSection() {
                 {card.action}
               </a>
             </div>
-            <img src={card.image} alt={card.title} className="h-[240px] w-full object-cover lg:h-full" />
+            <img
+              src={card.image}
+              alt={card.title}
+              className="aspect-[4/5] w-full object-cover object-center lg:aspect-auto lg:h-full"
+            />
           </article>
         ))}
       </div>

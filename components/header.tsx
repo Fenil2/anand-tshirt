@@ -17,7 +17,7 @@ export function Header() {
           <img
             src="/spotdot-logo.jpeg"
             alt="SpotDot logo"
-            className="h-12 w-12 rounded-full border border-[color:var(--line)] bg-white object-cover shadow-[0_10px_30px_rgba(23,23,26,0.12)] sm:h-14 sm:w-14 lg:h-18 lg:w-18"
+            className="h-12 w-12 rounded-full border border-[color:var(--line)] bg-white object-cover sm:h-14 sm:w-14 lg:h-18 lg:w-18"
           />
           <p className="text-[16px] font-semibold uppercase tracking-[0.14em] text-[color:var(--brand)] sm:text-[20px] sm:tracking-[0.18em] lg:text-[28px] lg:tracking-[0.24em]">
             SpotDot
@@ -41,7 +41,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
-            className="btn-primary hidden px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] md:inline-flex lg:px-5 lg:py-3 lg:text-[13px] lg:tracking-[0.16em]"
+            className="btn-primary hover:shadow-none! hidden px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] md:inline-flex lg:px-5 lg:py-3 lg:text-[13px] lg:tracking-[0.16em]"
           >
             Let&apos;s Talk
           </a>
@@ -78,7 +78,7 @@ export function Header() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="btn-primary mt-2 px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.14em]"
+              className="btn-primary hover:shadow-none! mt-2 px-4 py-3 text-[12px] font-semibold uppercase tracking-[0.14em]"
             >
               Let&apos;s Talk
             </a>

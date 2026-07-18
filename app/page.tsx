@@ -5,7 +5,6 @@ import { CtaBanner } from "@/components/cta-banner";
 import { CustomizeSection } from "@/components/customize-section";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
-import { ProductGrid } from "@/components/product-grid";
 import { SaleBanner } from "@/components/sale-banner";
 import { SiteFooter } from "@/components/site-footer";
 import { TestimonialFeatures } from "@/components/testimonial-features";
@@ -22,7 +21,6 @@ export default function Home() {
       <CategorySection />
       <CollectionsStrip />
       <MarqueeHeading text="premium t-shirt sales  *  everyday icons  *  fresh new drops" />
-      <ProductGrid title="Best sellers" subtitle="The signature SpotDot pieces customers keep coming back for." />
       <SaleBanner />
       <CustomizeSection />
       <TestimonialFeatures />

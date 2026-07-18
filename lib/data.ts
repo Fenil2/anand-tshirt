@@ -12,211 +12,102 @@ export const heroChecklist = [
   "Easy sizes, fast delivery, and limited seasonal drops"
 ];
 
-export const categories = [
-  {
-    name: "T-shirts",
-    count: 15,
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=320&q=80"
-  },
-  {
-    name: "Long Sleeves",
-    count: 8,
-    image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=320&q=80"
-  },
-  {
-    name: "Sweatshirts",
-    count: 18,
-    image:
-      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=320&q=80"
-  },
-  {
-    name: "Hoodies",
-    count: 9,
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=320&q=80"
-  },
-  {
-    name: "Tank Tops",
-    count: 6,
-    image:
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=320&q=80"
-  }
-];
-
-export const collectionCards = [
-  {
-    id: "men",
-    label: "Men's Collection",
-    image:
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80",
-    tint: "from-black/60 via-black/18 to-transparent"
-  },
-  {
-    id: "kids",
-    label: "Kids Collection",
-    image:
-      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=900&q=80",
-    tint: "from-black/58 via-black/12 to-transparent"
-  },
-  {
-    id: "women",
-    label: "Women's Collection",
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
-    tint: "from-black/62 via-black/16 to-transparent"
-  }
-];
-
-export const collectionProducts = {
-  men: [
-    {
-      name: "Relaxed Crew Tee",
-      description: "A clean everyday essential with an easy fit and soft premium cotton.",
-      image:
-        "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Minimal Black Tee",
-      description: "Sharp silhouette and smooth fabric for a modern off-duty wardrobe.",
-      image:
-        "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Statement Graphic Tee",
-      description: "Bold front graphic energy for a stronger streetwear look.",
-      image:
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Signature Hoodie",
-      description: "Heavyweight comfort built for cooler evenings and laid-back styling.",
-      image:
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=520&q=80"
-    }
-  ],
-  kids: [
-    {
-      name: "Playday Tee",
-      description: "Soft breathable cotton made for comfort, movement, and all-day wear.",
-      image:
-        "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Bright Summer Top",
-      description: "Easy cheerful styling with a lightweight feel and kid-friendly fit.",
-      image:
-        "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Everyday Graphic Tee",
-      description: "Fun casual wardrobe staple for active weekends and school days.",
-      image:
-        "https://images.unsplash.com/photo-1519238359922-989348752efb?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Cozy Kids Hoodie",
-      description: "A soft layer for cooler weather without losing the playful look.",
-      image:
-        "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=520&q=80"
-    }
-  ],
-  women: [
-    {
-      name: "Classic Logo Tee",
-      description: "Premium daily staple with a neat fit and clean elevated finish.",
-      image:
-        "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Fine Jersey Tank",
-      description: "A fresh warm-weather favorite with a smooth athletic silhouette.",
-      image:
-        "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Soft Cotton Tee",
-      description: "Refined comfort and flattering shape for effortless daily styling.",
-      image:
-        "https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=520&q=80"
-    },
-    {
-      name: "Premium Lounge Set",
-      description: "Relaxed luxury feel for home, travel, and casual streetwear looks.",
-      image:
-        "https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=520&q=80"
-    }
-  ]
+// The five real SpotDot product / campaign images (in /public).
+// Filenames match the exact on-disk casing so they load on case-sensitive hosts.
+export const brandImages = {
+  essentialsModel: "/man.png", // orange "Essentials" campaign — model in green tee
+  essentialsHanger: "/IMG_9323.PNG", // orange "Essentials" campaign — hanger shot
+  navy: "/IMG_9324.JPG.jpeg", // navy tee — "Wear Your Confidence"
+  drop: "/IMG_0173.JPG.jpeg", // grey "Drop 01" — "Engineered for the perfect fit"
+  flatlay: "/IMG_9302.PNG" // clean navy tee flat lay
 } as const;
 
-export const featuredProducts = [
+export const categories = [
+  { name: "T-shirts", count: 15, tag: "Everyday" },
+  { name: "Oversized", count: 8, tag: "Street" },
+  { name: "Essentials", count: 18, tag: "Core" },
+  { name: "Half Sleeves", count: 9, tag: "Summer" },
+  { name: "New Drops", count: 6, tag: "Limited" }
+];
+
+export const showcaseItems = [
   {
-    name: "Oversized Street Tee",
-    description: "Relaxed fit cotton staple built for easy everyday layering.",
-    image:
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=520&q=80"
+    id: "essentials",
+    label: "Essentials",
+    tag: "Mens Half Sleeve",
+    copy: "The foundation of every wardrobe — clothes which you love.",
+    image: brandImages.essentialsHanger
   },
   {
-    name: "Classic Logo Tee",
-    description: "Clean minimal essential with a premium finish and soft hand feel.",
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=520&q=80"
+    id: "confidence",
+    label: "Signature Navy",
+    tag: "Oversized Fit",
+    copy: "Wear your confidence. Soft, stylish, and comfortable.",
+    image: brandImages.navy
   },
   {
-    name: "Kids Summer Tee",
-    description: "Light and playful style designed for comfort through the day.",
-    image:
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=520&q=80"
+    id: "drop01",
+    label: "Drop 01",
+    tag: "260+ GSM Heavy Cotton",
+    copy: "Built different. Worn by few. Engineered for the perfect fit.",
+    image: brandImages.drop
   },
   {
-    name: "Fine Jersey Tank",
-    description: "A breezy warm-weather favorite with a clean athletic silhouette.",
-    image:
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=520&q=80"
-  },
-  {
-    name: "Signature Hoodie",
-    description: "A plush heavyweight layer made for cool evenings and daily wear.",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=520&q=80"
-  },
-  {
-    name: "Graphic Statement Tee",
-    description: "Bold front-print energy for wardrobes that like a louder look.",
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=520&q=80"
-  },
-  {
-    name: "Everyday Cotton Tee",
-    description: "Sharp shape, premium fabric, and a fit that works all week.",
-    image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=520&q=80"
-  },
-  {
-    name: "Premium Sweat Set",
-    description: "Editorial loungewear made for comfort without losing polish.",
-    image:
-      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=520&q=80"
+    id: "core",
+    label: "Core Flat Lay",
+    tag: "Everyday Staple",
+    copy: "A clean minimal essential with a premium finish and soft hand feel.",
+    image: brandImages.flatlay
   }
 ];
 
 export const customCards = [
   {
-    title: "Fresh fits for your first cart",
-    copy: "Start with easy staples, soft fabrics, and bestselling everyday silhouettes.",
-    action: "Shop Now",
-    image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80",
+    title: "Engineered for the perfect fit",
+    copy: "Oversized, structural, timeless. No noise, just design — premium matte texture on ultra-heavy cotton.",
+    action: "Shop Drop 01",
+    image: brandImages.drop,
     panel: "bg-[#ebe5dc]"
   },
   {
-    title: "Create your own weekend rotation",
-    copy: "Build a clean wardrobe with tees, tanks, hoodies, and seasonal layers.",
+    title: "Wear your confidence every day",
+    copy: "Start with easy staples in soft premium fabrics and build a clean wardrobe you keep coming back to.",
     action: "Discover More",
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+    image: brandImages.navy,
     panel: "bg-[#f1ece5]"
+  }
+];
+
+export const testimonials = [
+  {
+    quote:
+      "SpotDot makes shopping feel elevated. The tees fit beautifully, the hoodies feel premium, and every drop has that fresh look you want to wear right away.",
+    name: "Mary",
+    role: "Verified Customer"
+  },
+  {
+    quote:
+      "The fit is exactly what the photos promise. Soft, structured cotton that holds its shape wash after wash — these have quickly become my everyday go-to.",
+    name: "Aditya",
+    role: "Verified Customer"
+  },
+  {
+    quote:
+      "Ordered three tees and every single one felt premium straight out of the box. Fast delivery, and the size guide was completely spot on.",
+    name: "Sara",
+    role: "Verified Customer"
+  },
+  {
+    quote:
+      "Finally a brand that gets oversized right. Clean drops, no loud branding — just quality basics I actually reach for every week.",
+    name: "Kabir",
+    role: "Verified Customer"
+  },
+  {
+    quote:
+      "Effortless from checkout to wearing it out. The colours stay rich and the fabric feels breathable even on the warmest days.",
+    name: "Neha",
+    role: "Verified Customer"
   }
 ];
 
@@ -242,24 +133,18 @@ export const features = [
 export const articles = [
   {
     category: "Style Guide",
-    date: "August 20, 2022",
-    title: "How to build a clean wardrobe around everyday tees",
-    image:
-      "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=900&q=80"
+    date: "August 20, 2025",
+    title: "How to build a clean wardrobe around everyday tees"
   },
   {
     category: "New Drop",
-    date: "August 20, 2022",
-    title: "What to shop first from our latest seasonal collection",
-    image:
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80"
+    date: "August 20, 2025",
+    title: "What to shop first from our latest seasonal collection"
   },
   {
     category: "Fashion Notes",
-    date: "August 20, 2022",
-    title: "The premium essentials that work in every rotation",
-    image:
-      "https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=900&q=80"
+    date: "August 20, 2025",
+    title: "The premium essentials that work in every rotation"
   }
 ];
 

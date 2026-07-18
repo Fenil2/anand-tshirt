@@ -2,74 +2,85 @@
 
 import { useEffect, useState } from "react";
 
+const WORDMARK = "SPOTDOT";
+const MIN_DURATION = 1800;
+
 export function Preloader() {
   const [isVisible, setIsVisible] = useState(true);
   const [isHiding, setIsHiding] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     let mounted = true;
+    let frame = 0;
     let hideTimer: ReturnType<typeof setTimeout> | undefined;
+    const start = Date.now();
+    let loaded = document.readyState === "complete";
 
-    const startHide = () => {
+    const markLoaded = () => {
+      loaded = true;
+    };
+    if (!loaded) window.addEventListener("load", markLoaded, { once: true });
+
+    const loop = () => {
       if (!mounted) return;
-      setIsHiding(true);
-      hideTimer = setTimeout(() => {
-        if (mounted) {
-          setIsVisible(false);
-        }
-      }, 700);
+      const elapsed = Date.now() - start;
+      let pct = (elapsed / MIN_DURATION) * 100;
+      if (!loaded) pct = Math.min(pct, 92);
+      pct = Math.min(pct, 100);
+      setProgress(Math.floor(pct));
+
+      if (pct >= 100 && loaded) {
+        setIsHiding(true);
+        // Cue the page reveal as the curtain begins to lift.
+        window.dispatchEvent(new Event("spotdot:reveal"));
+        hideTimer = setTimeout(() => {
+          if (mounted) setIsVisible(false);
+        }, 950);
+        return;
+      }
+      frame = requestAnimationFrame(loop);
     };
 
-    const revealWhenReady = () => {
-      window.setTimeout(startHide, 1200);
-    };
-
-    if (document.readyState === "complete") {
-      revealWhenReady();
-    } else {
-      window.addEventListener("load", revealWhenReady, { once: true });
-    }
+    frame = requestAnimationFrame(loop);
 
     return () => {
       mounted = false;
-      window.removeEventListener("load", revealWhenReady);
-      if (hideTimer) {
-        clearTimeout(hideTimer);
-      }
+      cancelAnimationFrame(frame);
+      window.removeEventListener("load", markLoaded);
+      if (hideTimer) clearTimeout(hideTimer);
     };
   }, []);
 
   if (!isVisible) return null;
 
   return (
-    <div
-      className={`loader-screen fixed inset-0 z-[200] flex items-center justify-center px-6 transition duration-700 ${
-        isHiding ? "pointer-events-none opacity-0 scale-[1.02]" : "opacity-100"
-      }`}
-    >
-      <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="loader-ring absolute h-[220px] w-[220px] rounded-full border border-white/40 sm:h-[280px] sm:w-[280px]" />
-        <div className="loader-ring absolute h-[280px] w-[280px] rounded-full border border-black/6 [animation-delay:220ms] sm:h-[360px] sm:w-[360px]" />
+    <div className="pl-root fixed inset-0 z-[200]">
+      <div className={`pl-panel pl-panel-top ${isHiding ? "pl-open" : ""}`} />
+      <div className={`pl-panel pl-panel-bottom ${isHiding ? "pl-open" : ""}`} />
 
-        <div className="loader-orb relative flex h-28 w-28 items-center justify-center rounded-full border border-white/70 bg-white/90 p-3 backdrop-blur-xl sm:h-36 sm:w-36">
-          <img
-            src="/spotdot-logo.jpeg"
-            alt="SpotDot logo"
-            className="h-full w-full rounded-full object-cover"
-          />
+      <div className={`pl-content ${isHiding ? "pl-content-out" : ""}`}>
+        <p className="pl-eyebrow">Premium Essentials</p>
+
+        <div className="pl-mark" aria-label={WORDMARK}>
+          {WORDMARK.split("").map((letter, index) => (
+            <span
+              key={`${letter}-${index}`}
+              className="pl-letter"
+              style={{ animationDelay: `${index * 70}ms` }}
+            >
+              {letter}
+            </span>
+          ))}
         </div>
 
-        <div className="loader-copy mt-8">
-          <p className="text-[28px] font-semibold uppercase tracking-[0.22em] text-[color:var(--brand)] sm:text-[40px]">
-            SpotDot
-          </p>
-          <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.34em] text-[color:var(--muted-soft)] sm:text-[12px]">
-            Loading the new collection
-          </p>
+        <div className="pl-bar">
+          <div className="pl-bar-fill" style={{ width: `${progress}%` }} />
         </div>
 
-        <div className="mt-8 h-[2px] w-40 overflow-hidden rounded-full bg-black/8 sm:w-56">
-          <div className="h-full w-1/2 animate-[cinematicSweep_1.8s_ease-in-out_infinite] rounded-full bg-[color:var(--brand)]" />
+        <div className="pl-meta">
+          <span>Loading the collection</span>
+          <span className="pl-count">{progress.toString().padStart(3, "0")}%</span>
         </div>
       </div>
     </div>

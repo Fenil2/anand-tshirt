@@ -23,20 +23,22 @@ export function ArticlesSection() {
           {articles.map((article, index) => (
             <article
               key={article.title}
-              className={`premium-card reveal-up overflow-hidden rounded-[30px] border border-white/60 p-4 delay-${Math.min(index + 1, 3)}`}
+              className={`premium-card cinematic-panel reveal-up group flex flex-col rounded-[30px] border border-white/60 p-6 delay-${Math.min(index + 1, 3)}`}
             >
-              <img
-                src={article.image}
-                alt={article.title}
-                className="h-[190px] w-full rounded-[24px] object-cover"
-              />
-              <div className="mt-4 flex flex-wrap gap-3 text-[10px] uppercase tracking-[0.16em] text-[color:var(--muted-soft)]">
+              <span className="text-[13px] font-semibold text-[color:var(--muted-soft)]">
+                0{index + 1}
+              </span>
+              <div className="mt-6 h-px w-full bg-[color:var(--line)]" />
+              <div className="mt-6 flex flex-wrap gap-3 text-[10px] uppercase tracking-[0.16em] text-[color:var(--muted-soft)]">
                 <span>{article.category}</span>
                 <span>{article.date}</span>
               </div>
               <h3 className="mt-3 text-[22px] font-semibold leading-7 tracking-[-0.04em] text-[color:var(--brand)]">
                 {article.title}
               </h3>
+              <span className="mt-8 inline-flex text-[12px] font-semibold uppercase tracking-[0.16em] text-[color:var(--brand)] transition group-hover:translate-x-1">
+                Read more &rarr;
+              </span>
             </article>
           ))}
         </div>

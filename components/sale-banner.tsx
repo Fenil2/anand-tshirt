@@ -1,3 +1,5 @@
+import { brandImages } from "@/lib/data";
+
 export function SaleBanner() {
   return (
     <section id="process" className="section-shell py-8 sm:py-12 lg:py-14">
@@ -36,9 +38,9 @@ export function SaleBanner() {
 
         <div className="grid gap-6 sm:grid-cols-[1fr_1fr] sm:items-end">
           <img
-            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
-            alt="New arrival outfit"
-            className="h-[280px] w-full rounded-[30px] object-cover shadow-[0_20px_50px_rgba(24,24,28,0.12)] sm:h-[360px]"
+            src={brandImages.flatlay}
+            alt="SpotDot core flat lay tee"
+            className="h-[280px] w-full rounded-[30px] object-cover object-center shadow-[0_20px_50px_rgba(24,24,28,0.12)] sm:h-[360px]"
           />
           <div className="relative">
             <span className="absolute left-4 top-4 inline-flex rounded-full border border-white/20 bg-[color:var(--brand)] px-4 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-white sm:left-[-18px] sm:top-1/2 sm:h-[88px] sm:w-[88px] sm:-translate-y-1/2 sm:items-center sm:justify-center sm:px-0 sm:py-0 sm:text-[14px] sm:leading-tight">
@@ -47,9 +49,9 @@ export function SaleBanner() {
               drop
             </span>
             <img
-              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
-              alt="SpotDot hoodie"
-              className="h-[280px] w-full rounded-[30px] object-cover shadow-[0_20px_50px_rgba(24,24,28,0.12)] sm:h-[320px]"
+              src={brandImages.essentialsModel}
+              alt="SpotDot essentials campaign"
+              className="h-[280px] w-full rounded-[30px] object-cover object-center shadow-[0_20px_50px_rgba(24,24,28,0.12)] sm:h-[320px]"
             />
           </div>
         </div>
